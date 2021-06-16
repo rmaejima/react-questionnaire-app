@@ -10,7 +10,7 @@ import { useEffect } from "react";
 export const Question1: React.VFC = () => {
   const { score, setScore } = useScoreContext();
   useEffect(() => {
-    setScore(0);
+    setScore("");
   }, []);
 
   return (
@@ -18,22 +18,22 @@ export const Question1: React.VFC = () => {
       <PageHeading>質問１</PageHeading>
       <Link to="/q2">
         <StyledButton>
-          <Button onClick={() => setScore(score + 4)}>+4</Button>
+          <Button onClick={() => setScore(score + "面白い")}>面白い</Button>
         </StyledButton>
       </Link>
       <Link to="/q2">
         <StyledButton>
-          <Button onClick={() => setScore(score + 3)}>+3</Button>
+          <Button onClick={() => setScore(score + "感動")}>感動</Button>
         </StyledButton>
       </Link>
       <Link to="/q2">
         <StyledButton>
-          <Button onClick={() => setScore(score + 2)}>+2</Button>
+          <Button onClick={() => setScore(score + "衝撃")}>衝撃</Button>
         </StyledButton>
       </Link>
       <Link to="/q2">
         <StyledButton>
-          <Button onClick={() => setScore(score + 1)}>+1</Button>
+          <Button onClick={() => setScore(score + "悲しい")}>悲しい</Button>
         </StyledButton>
       </Link>
     </Container>
