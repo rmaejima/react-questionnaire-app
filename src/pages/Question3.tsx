@@ -3,14 +3,14 @@ import { Link } from "react-router-dom";
 
 import { usePointContext } from "contexts/PointProvider";
 
-export const Question1: React.VFC = () => {
+export const Question3: React.VFC = () => {
   const { point, setPoint } = usePointContext();
   return (
     <>
-      <div>質問1</div>
+      <div>質問3</div>
       <p>{point}</p>
       <button onClick={() => setPoint(point + 1)}>+</button>
-      <Link to="/q2">次の質問へ移動</Link>
+      <Link to="/result">次の質問へ移動</Link>
     </>
   );
 };
