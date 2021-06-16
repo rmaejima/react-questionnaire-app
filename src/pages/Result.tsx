@@ -1,13 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import { usePointContext } from "contexts/PointProvider";
+import { useScoreContext } from "contexts/ScoreProvider";
 
 export const Result: React.VFC = () => {
-  const { point, setPoint } = usePointContext();
+  const { score, setScore } = useScoreContext();
   return (
     <>
-      <p>あなたの得点は{point}です</p>
+      <p>あなたの得点は{score}です</p>
       <Link to="/">ホームへ移動</Link>
     </>
   );
