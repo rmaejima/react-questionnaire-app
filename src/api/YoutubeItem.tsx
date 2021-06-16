@@ -52,6 +52,31 @@ export const YoutubeItem: React.VFC<Props> = ({ keyword }) => {
   );
 };
 
+export interface Keywords {
+  keyword: string;
+}
+
+export const callApi = async (keyword: Props) => {
+  // クエリ文字列を定義する
+  const params = {
+    key: API_KEY,
+    q: `${keyword}`, // 検索キーワード
+    type: "video", // video,channel,playlistから選択できる
+    maxResults: "1", // 結果の最大数
+    order: "viewCount", // 結果の並び順を再生回数の多い順に
+  };
+  const queryParams = new URLSearchParams(params);
+  try {
+    const res = await fetch(YOUTUBE_SERACH_API_URI + queryParams);
+    const result = await res.json();
+    const firstItem = await result.items[0];
+    const word = await firstItem.id.videoId;
+    return word;
+  } catch (err) {
+    console.log("上手くいきませんでした");
+  }
+};
+
 // export const Youtube = async () => {
 //   // const [videoId, setVideoId] = useState("");
 //   // クエリ文字列を定義する

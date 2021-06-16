@@ -5,8 +5,17 @@ import styled from "styled-components";
 import { PageHeading } from "components/common/PageHeading";
 import { AboutApp } from "components/top/AboutApp";
 import { Button } from "components/common/Button";
+// import { callApi, Keywords } from "api/YoutubeItem";
+// import { useEffect } from "react";
+// import { useState } from "react";
 
 export const Home: React.VFC = () => {
+  // const [keyword, setKeyword] = useState<Keywords>();
+  // useEffect(() => {
+  //   const key = callApi({ keyword: "ナルト" });
+  //   console.log(key);
+  //   // setKeyword(key);
+  // }, []);
   return (
     <Container>
       <PageHeading>Home</PageHeading>
