@@ -5,7 +5,7 @@ export const NotFound: React.VFC = () => {
   return (
     <>
       <div>ページが見つかりませんでした</div>
-      <Link to="/q1">ホームへ移動</Link>
+      <Link to="/">ホームへ移動</Link>
     </>
   );
 };
