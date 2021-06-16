@@ -2,8 +2,8 @@ import React, { createContext, useState, useContext } from "react";
 
 export const ScoreContext = createContext(
   {} as {
-    score: number;
-    setScore: React.Dispatch<React.SetStateAction<number>>;
+    score: string;
+    setScore: React.Dispatch<React.SetStateAction<string>>;
   }
 );
 
@@ -16,7 +16,7 @@ interface Props {
 }
 
 export const ScoreProvider: React.VFC<Props> = ({ children }) => {
-  const [score, setScore] = useState(0);
+  const [score, setScore] = useState("");
   return (
     <ScoreContext.Provider value={{ score, setScore }}>
       {children}

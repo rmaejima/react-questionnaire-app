@@ -13,22 +13,22 @@ export const Question3: React.VFC = () => {
       <PageHeading>質問３</PageHeading>
       <Link to="/result">
         <StyledButton>
-          <Button onClick={() => setScore(score + 4)}>+4</Button>
+          <Button onClick={() => setScore(score + " すごい")}>すごい</Button>
         </StyledButton>
       </Link>
       <Link to="/result">
         <StyledButton>
-          <Button onClick={() => setScore(score + 3)}>+3</Button>
+          <Button onClick={() => setScore(score + " バカ")}>バカ</Button>
         </StyledButton>
       </Link>
       <Link to="/result">
         <StyledButton>
-          <Button onClick={() => setScore(score + 2)}>+2</Button>
+          <Button onClick={() => setScore(score + " 天才")}>天才</Button>
         </StyledButton>
       </Link>
       <Link to="/result">
         <StyledButton>
-          <Button onClick={() => setScore(score + 1)}>+1</Button>
+          <Button onClick={() => setScore(score + " 凡人")}>凡人</Button>
         </StyledButton>
       </Link>
     </Container>
