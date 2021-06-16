@@ -5,6 +5,7 @@ import styled from "styled-components";
 import { useScoreContext } from "contexts/ScoreProvider";
 import { PageHeading } from "components/common/PageHeading";
 import { Button } from "components/common/Button";
+import { YoutubeItem } from "api/YoutubeItem";
 
 export const Result: React.VFC = () => {
   const { score, setScore } = useScoreContext();
@@ -12,6 +13,7 @@ export const Result: React.VFC = () => {
     <Container>
       <PageHeading>結果</PageHeading>
       <Text>あなたの結果は" {score} "です</Text>
+      <YoutubeItem />
 
       <Link to="/">
         <StyledButton>
