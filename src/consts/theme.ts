@@ -2,12 +2,15 @@ export const colors = {
   text: {
     base: "#21252F",
   },
+  base: {
+    500: "#F2FAE3",
+  },
   primary: {
-    500: "#EBC658",
-    400: "#F6D77E",
+    500: "#CBE896",
+    400: "#E5F4C9",
   },
   accent: {
-    500: "#E2744A",
+    500: "#96E5E8",
   },
   gray: {
     800: "#333333",
