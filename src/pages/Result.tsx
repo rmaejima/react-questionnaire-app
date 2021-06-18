@@ -12,7 +12,7 @@ export const Result: React.VFC = () => {
   return (
     <Container>
       <PageHeading>結果</PageHeading>
-      <Text>あなたの結果は" {score} "です</Text>
+      <Text>こんな動画はどうでしょうか？</Text>
       <YoutubeItem keyword={score} />
 
       <Link to="/">
