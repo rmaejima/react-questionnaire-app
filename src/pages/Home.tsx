@@ -1,12 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 import { PageHeading } from "components/common/PageHeading";
 import { AboutApp } from "components/top/AboutApp";
 import { Button } from "components/common/Button";
+// import { GetYoutubeApi } from "api/YoutubeItem";
 
 export const Home: React.VFC = () => {
+  // useEffect(() => {
+  //   const i = GetYoutubeApi("ナルト");
+  //   console.log(i);
+  // }, []);
   return (
     <Container>
       <PageHeading>Home</PageHeading>
