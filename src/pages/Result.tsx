@@ -26,7 +26,7 @@ export const Result: React.VFC = () => {
 
 const Container = styled.div`
   width: 100%;
-  /* height: 100vh; */
+  min-height: 100vh;
   padding: 3rem 0 3rem;
   background-color: ${(p) => p.theme.colors.base[500]};
 `;
