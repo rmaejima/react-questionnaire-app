@@ -7,9 +7,9 @@ export interface ModalContextProps {
 
 export const ScoreContext = createContext(
   {} as {
-    score: {
-      key: string;
-    };
+    // score: {
+    //   key: string;
+    // };
     setScore: React.Dispatch<React.SetStateAction<string>>;
   }
 );
