@@ -1,8 +1,15 @@
 import React, { createContext, useState, useContext } from "react";
 
+export interface ModalContextProps {
+  key: string;
+  category: string;
+}
+
 export const ScoreContext = createContext(
   {} as {
-    score: string;
+    score: {
+      key: string;
+    };
     setScore: React.Dispatch<React.SetStateAction<string>>;
   }
 );

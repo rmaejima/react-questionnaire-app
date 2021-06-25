@@ -13,6 +13,7 @@ export const getYoutubeVideos = async (
     type: "video",
     maxResults: "5",
     order: "viewCount", // 検索順
+    videoCategoryId: "1", // カテゴリー
   };
   const queryParams = new URLSearchParams(params);
 
