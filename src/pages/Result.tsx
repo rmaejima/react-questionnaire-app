@@ -7,6 +7,7 @@ import { PageHeading } from "components/common/PageHeading";
 import { Button } from "components/common/Button";
 import { getYoutubeVideos } from "api/videos";
 import { YoutubeVideo } from "types/youtube";
+import { VideoList } from "components/videos";
 
 export const Result: React.VFC = () => {
   const { score, setScore } = useScoreContext();
@@ -20,20 +21,7 @@ export const Result: React.VFC = () => {
     <Container>
       <PageHeading>結果</PageHeading>
       <Text>こんな動画はどうでしょうか？</Text>
-      {videos[0] &&
-        videos.map((video) => {
-          return (
-            <Iframe
-              title="サンプル"
-              id="player"
-              width="640"
-              height="360"
-              src={"https://www.youtube.com/embed/" + video.id.videoId}
-              frameBorder="0"
-              allowFullScreen
-            />
-          );
-        })}
+      <VideoList videos={videos} />
       <Link to="/">
         <StyledButton>
           <Button>ホームに戻る</Button>
@@ -59,9 +47,4 @@ const Text = styled.p`
 const StyledButton = styled.div`
   max-width: 1200px;
   margin: 2rem auto 0;
-`;
-
-const Iframe = styled.iframe`
-  display: block;
-  margin: 0 auto;
 `;
