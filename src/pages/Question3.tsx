@@ -33,7 +33,7 @@ export const Question3: React.VFC = () => {
       </Link>
       <Link to="/result">
         <StyledButton>
-          <Button onClick={() => setKey(key + "")}></Button>
+          <Button onClick={() => setKey(key + "")}>特になし</Button>
         </StyledButton>
       </Link>
     </Container>
