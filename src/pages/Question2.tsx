@@ -1,38 +1,39 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-import { useScoreContext } from "contexts/ScoreProvider";
+import { ScoreContext } from "contexts/ScoreProvider";
 import { PageHeading } from "components/common/PageHeading";
 import { Button } from "components/common/Button";
 
 export const Question2: React.VFC = () => {
-  const { score, setScore } = useScoreContext();
+  const { key, setKey } = useContext(ScoreContext);
   return (
     <Container>
       <PageHeading>質問２</PageHeading>
       <Link to="/q3">
         <StyledButton>
-          <Button onClick={() => setScore(score + " 食事")}>食事</Button>
+          <Button onClick={() => setKey(key + "大乱闘")}>大乱闘</Button>
         </StyledButton>
       </Link>
       <Link to="/q3">
         <StyledButton>
-          <Button onClick={() => setScore(score + " 音楽")}>音楽</Button>
+          <Button onClick={() => setKey(key + "音楽")}>音楽</Button>
         </StyledButton>
       </Link>
       <Link to="/q3">
         <StyledButton>
-          <Button onClick={() => setScore(score + " スポーツ")}>
-            スポーツ
-          </Button>
+          <Button onClick={() => setKey(key + "スポーツ")}>スポーツ</Button>
         </StyledButton>
       </Link>
       <Link to="/q3">
         <StyledButton>
-          <Button onClick={() => setScore(score + " エンタメ")}>
-            エンタメ
-          </Button>
+          <Button onClick={() => setKey(key + "エンタメ")}>エンタメ</Button>
+        </StyledButton>
+      </Link>
+      <Link to="/q3">
+        <StyledButton>
+          <Button onClick={() => setKey(key + "バスケ")}>バスケ</Button>
         </StyledButton>
       </Link>
     </Container>
