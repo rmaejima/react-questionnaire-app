@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-import { ScoreContext } from "contexts/ScoreProvider";
+import { SearchContext } from "contexts/SearchProvider";
 import { PageHeading } from "components/common/PageHeading";
 import { Button } from "components/common/Button";
 import { getYoutubeVideos } from "api/videos";
@@ -10,11 +10,13 @@ import { YoutubeVideo } from "types/youtube";
 import { VideoList } from "components/videos";
 
 export const Result: React.VFC = () => {
-  const { key, category } = useContext(ScoreContext);
+  const { searchElement } = useContext(SearchContext);
   const [videos, setVideos] = useState<YoutubeVideo[]>([]);
   useEffect(() => {
     (async () => {
-      setVideos(await getYoutubeVideos(key, category));
+      setVideos(
+        await getYoutubeVideos(searchElement.key, searchElement.category)
+      );
     })();
   }, []);
   return (

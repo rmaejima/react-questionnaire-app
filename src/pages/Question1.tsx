@@ -2,15 +2,15 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-import { ScoreContext } from "contexts/ScoreProvider";
+import { SearchContext } from "contexts/SearchProvider";
 import { PageHeading } from "components/common/PageHeading";
 import { Button } from "components/common/Button";
 import { useEffect } from "react";
 
 export const Question1: React.VFC = () => {
-  const { setCategory } = useContext(ScoreContext);
+  const { searchElement, setSearchElement } = useContext(SearchContext);
   useEffect(() => {
-    setCategory("");
+    setSearchElement({ ...searchElement, category: "" });
   }, []);
 
   return (
@@ -18,22 +18,46 @@ export const Question1: React.VFC = () => {
       <PageHeading>カテゴリーを選択してください</PageHeading>
       <Link to="/q2">
         <StyledButton>
-          <Button onClick={() => setCategory("1")}>アニメ</Button>
+          <Button
+            onClick={() =>
+              setSearchElement({ ...searchElement, category: "1" })
+            }
+          >
+            アニメ
+          </Button>
         </StyledButton>
       </Link>
       <Link to="/q2">
         <StyledButton>
-          <Button onClick={() => setCategory("2")}>エンタメ</Button>
+          <Button
+            onClick={() =>
+              setSearchElement({ ...searchElement, category: "2" })
+            }
+          >
+            エンタメ
+          </Button>
         </StyledButton>
       </Link>
       <Link to="/q2">
         <StyledButton>
-          <Button onClick={() => setCategory("3")}>芸能</Button>
+          <Button
+            onClick={() =>
+              setSearchElement({ ...searchElement, category: "3" })
+            }
+          >
+            芸能
+          </Button>
         </StyledButton>
       </Link>
       <Link to="/q2">
         <StyledButton>
-          <Button onClick={() => setCategory("4")}>悲しい</Button>
+          <Button
+            onClick={() =>
+              setSearchElement({ ...searchElement, category: "4" })
+            }
+          >
+            悲しい
+          </Button>
         </StyledButton>
       </Link>
     </Container>
