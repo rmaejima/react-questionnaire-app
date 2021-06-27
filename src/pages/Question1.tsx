@@ -1,39 +1,63 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-import { useScoreContext } from "contexts/ScoreProvider";
+import { SearchContext } from "contexts/SearchProvider";
 import { PageHeading } from "components/common/PageHeading";
 import { Button } from "components/common/Button";
 import { useEffect } from "react";
 
 export const Question1: React.VFC = () => {
-  const { score, setScore } = useScoreContext();
+  const { searchElement, setSearchElement } = useContext(SearchContext);
   useEffect(() => {
-    setScore("");
+    setSearchElement({ ...searchElement, category: "" });
   }, []);
 
   return (
     <Container>
-      <PageHeading>質問１</PageHeading>
+      <PageHeading>カテゴリーを選択してください</PageHeading>
       <Link to="/q2">
         <StyledButton>
-          <Button onClick={() => setScore(score + "面白い")}>面白い</Button>
+          <Button
+            onClick={() =>
+              setSearchElement({ ...searchElement, category: "1" })
+            }
+          >
+            アニメ
+          </Button>
         </StyledButton>
       </Link>
       <Link to="/q2">
         <StyledButton>
-          <Button onClick={() => setScore(score + "感動")}>感動</Button>
+          <Button
+            onClick={() =>
+              setSearchElement({ ...searchElement, category: "2" })
+            }
+          >
+            エンタメ
+          </Button>
         </StyledButton>
       </Link>
       <Link to="/q2">
         <StyledButton>
-          <Button onClick={() => setScore(score + "衝撃")}>衝撃</Button>
+          <Button
+            onClick={() =>
+              setSearchElement({ ...searchElement, category: "3" })
+            }
+          >
+            芸能
+          </Button>
         </StyledButton>
       </Link>
       <Link to="/q2">
         <StyledButton>
-          <Button onClick={() => setScore(score + "悲しい")}>悲しい</Button>
+          <Button
+            onClick={() =>
+              setSearchElement({ ...searchElement, category: "4" })
+            }
+          >
+            悲しい
+          </Button>
         </StyledButton>
       </Link>
     </Container>

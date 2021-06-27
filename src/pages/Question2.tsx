@@ -1,37 +1,66 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-import { useScoreContext } from "contexts/ScoreProvider";
+import { SearchContext } from "contexts/SearchProvider";
 import { PageHeading } from "components/common/PageHeading";
 import { Button } from "components/common/Button";
 
 export const Question2: React.VFC = () => {
-  const { score, setScore } = useScoreContext();
+  const { searchElement, setSearchElement } = useContext(SearchContext);
   return (
     <Container>
       <PageHeading>質問２</PageHeading>
       <Link to="/q3">
         <StyledButton>
-          <Button onClick={() => setScore(score + " 食事")}>食事</Button>
+          <Button
+            onClick={() =>
+              setSearchElement({ ...searchElement, key: "大乱闘" })
+            }
+          >
+            大乱闘
+          </Button>
         </StyledButton>
       </Link>
       <Link to="/q3">
         <StyledButton>
-          <Button onClick={() => setScore(score + " 音楽")}>音楽</Button>
+          <Button
+            onClick={() => setSearchElement({ ...searchElement, key: "音楽" })}
+          >
+            音楽
+          </Button>
         </StyledButton>
       </Link>
       <Link to="/q3">
         <StyledButton>
-          <Button onClick={() => setScore(score + " スポーツ")}>
+          <Button
+            onClick={() =>
+              setSearchElement({ ...searchElement, key: "スポーツ" })
+            }
+          >
             スポーツ
           </Button>
         </StyledButton>
       </Link>
       <Link to="/q3">
         <StyledButton>
-          <Button onClick={() => setScore(score + " エンタメ")}>
+          <Button
+            onClick={() =>
+              setSearchElement({ ...searchElement, key: "エンタメ" })
+            }
+          >
             エンタメ
+          </Button>
+        </StyledButton>
+      </Link>
+      <Link to="/q3">
+        <StyledButton>
+          <Button
+            onClick={() =>
+              setSearchElement({ ...searchElement, key: "バスケ" })
+            }
+          >
+            バスケ
           </Button>
         </StyledButton>
       </Link>

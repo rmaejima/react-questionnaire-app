@@ -5,7 +5,8 @@ const YOUTUBE_SERACH_API_URI = "https://www.googleapis.com/youtube/v3/search?";
 const API_KEY = `${process.env.REACT_APP_YOUTUBE_API_KEY}`;
 
 export const getYoutubeVideos = async (
-  keyword: string
+  keyword: string,
+  category: string
 ): Promise<YoutubeVideo[]> => {
   const params = {
     key: API_KEY,
@@ -13,6 +14,7 @@ export const getYoutubeVideos = async (
     type: "video",
     maxResults: "5",
     order: "viewCount", // 検索順
+    videoCategoryId: `${category}`, // カテゴリー
   };
   const queryParams = new URLSearchParams(params);
 

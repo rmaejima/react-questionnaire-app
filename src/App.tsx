@@ -7,11 +7,11 @@ import { Question2 } from "pages/Question2";
 import { Question3 } from "pages/Question3";
 import { Result } from "pages/Result";
 import { NotFound } from "pages/NotFound";
-import { ScoreProvider } from "contexts/ScoreProvider";
+import { SearchProvider } from "contexts/SearchProvider";
 
 export const App: React.VFC = () => {
   return (
-    <ScoreProvider>
+    <SearchProvider>
       <BrowserRouter>
         <Switch>
           <Route path="/" exact component={Home} />
@@ -23,6 +23,6 @@ export const App: React.VFC = () => {
           <Redirect to="/notFound" />
         </Switch>
       </BrowserRouter>
-    </ScoreProvider>
+    </SearchProvider>
   );
 };
