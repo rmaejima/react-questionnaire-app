@@ -11,6 +11,7 @@ export const getYoutubeVideos = async (
 ): Promise<YoutubeVideo[]> => {
   const params = {
     key: API_KEY,
+    part: "snippet", //snippetを指定することで、レスポンスにsnippetも含まれるようになる
     q: `${keyword}`,
     type: "video",
     maxResults: "5",
@@ -23,6 +24,7 @@ export const getYoutubeVideos = async (
     const res = await axios.get(YOUTUBE_SERACH_API_URI + queryParams);
     const result = await JSON.parse(JSON.stringify(res.data));
     const items: YoutubeVideo[] = await result.items;
+    console.log(items);
     return items;
   } catch (err) {
     // alert(err);

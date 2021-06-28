@@ -15,6 +15,11 @@ export const Home: React.VFC = () => {
           <Button>質問へ移動</Button>
         </StyledButton>
       </Link>
+      <Link to="/ch-q1">
+        <StyledButton>
+          <Button>チャンネルを探す</Button>
+        </StyledButton>
+      </Link>
     </Container>
   );
 };
