@@ -6,14 +6,15 @@ const API_KEY = `${process.env.REACT_APP_YOUTUBE_API_KEY}`;
 
 export const getYoutubeVideos = async (
   keyword: string,
-  category: string
+  category: string,
+  order: string
 ): Promise<YoutubeVideo[]> => {
   const params = {
     key: API_KEY,
     q: `${keyword}`,
     type: "video",
     maxResults: "5",
-    order: "viewCount", // 検索順
+    order: `${order}`, // 検索順
     videoCategoryId: `${category}`, // カテゴリー
   };
   const queryParams = new URLSearchParams(params);

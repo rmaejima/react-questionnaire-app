@@ -5,58 +5,66 @@ import styled from "styled-components";
 import { SearchContext } from "contexts/SearchProvider";
 import { PageHeading } from "components/common/PageHeading";
 import { Button } from "components/common/Button";
-import { useEffect } from "react";
 
-export const Question1: React.VFC = () => {
+const nextPath: string = "/q3";
+
+export const OrderQuestion: React.VFC = () => {
   const { searchElement, setSearchElement } = useContext(SearchContext);
-  useEffect(() => {
-    setSearchElement({ ...searchElement, category: "" });
-  }, []);
-
   return (
     <Container>
-      <PageHeading>カテゴリーを選択してください</PageHeading>
-      <Link to="/q2">
+      <PageHeading>検索順を選択してください</PageHeading>
+      <Link to={nextPath}>
         <StyledButton>
           <Button
             onClick={() =>
-              setSearchElement({ ...searchElement, category: "1" })
+              setSearchElement({ ...searchElement, order: "date" })
             }
           >
-            アニメ
+            投稿最新順
           </Button>
         </StyledButton>
       </Link>
-      <Link to="/q2">
+      <Link to={nextPath}>
         <StyledButton>
           <Button
             onClick={() =>
-              setSearchElement({ ...searchElement, category: "2" })
+              setSearchElement({ ...searchElement, order: "rating" })
             }
           >
-            エンタメ
+            評価順
           </Button>
         </StyledButton>
       </Link>
-      <Link to="/q2">
+      <Link to={nextPath}>
         <StyledButton>
           <Button
             onClick={() =>
-              setSearchElement({ ...searchElement, category: "3" })
+              setSearchElement({ ...searchElement, order: "relevance" })
             }
           >
-            芸能
+            検索クエリとの関連性が高い順
           </Button>
         </StyledButton>
       </Link>
-      <Link to="/q2">
+      <Link to={nextPath}>
         <StyledButton>
           <Button
             onClick={() =>
-              setSearchElement({ ...searchElement, category: "4" })
+              setSearchElement({ ...searchElement, order: "title" })
             }
           >
-            悲しい
+            タイトルのアルファベット順
+          </Button>
+        </StyledButton>
+      </Link>
+      <Link to={nextPath}>
+        <StyledButton>
+          <Button
+            onClick={() =>
+              setSearchElement({ ...searchElement, order: "viewCount" })
+            }
+          >
+            再生回数順
           </Button>
         </StyledButton>
       </Link>

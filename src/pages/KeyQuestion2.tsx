@@ -6,12 +6,14 @@ import { SearchContext } from "contexts/SearchProvider";
 import { PageHeading } from "components/common/PageHeading";
 import { Button } from "components/common/Button";
 
-export const Question3: React.VFC = () => {
+const nextPath: string = "/result";
+
+export const KeyQuestion2: React.VFC = () => {
   const { searchElement, setSearchElement } = useContext(SearchContext);
   return (
     <Container>
       <PageHeading>質問３</PageHeading>
-      <Link to="/result">
+      <Link to={nextPath}>
         <StyledButton>
           <Button
             onClick={() =>
@@ -25,7 +27,7 @@ export const Question3: React.VFC = () => {
           </Button>
         </StyledButton>
       </Link>
-      <Link to="/result">
+      <Link to={nextPath}>
         <StyledButton>
           <Button
             onClick={() =>
@@ -39,7 +41,7 @@ export const Question3: React.VFC = () => {
           </Button>
         </StyledButton>
       </Link>
-      <Link to="/result">
+      <Link to={nextPath}>
         <StyledButton>
           <Button
             onClick={() =>
@@ -53,7 +55,7 @@ export const Question3: React.VFC = () => {
           </Button>
         </StyledButton>
       </Link>
-      <Link to="/result">
+      <Link to={nextPath}>
         <StyledButton>
           <Button
             onClick={() =>
@@ -67,7 +69,7 @@ export const Question3: React.VFC = () => {
           </Button>
         </StyledButton>
       </Link>
-      <Link to="/result">
+      <Link to={nextPath}>
         <StyledButton>
           <Button
             onClick={() =>

@@ -15,7 +15,11 @@ export const Result: React.VFC = () => {
   useEffect(() => {
     (async () => {
       setVideos(
-        await getYoutubeVideos(searchElement.key, searchElement.category)
+        await getYoutubeVideos(
+          searchElement.key,
+          searchElement.category,
+          searchElement.order
+        )
       );
     })();
   }, []);
