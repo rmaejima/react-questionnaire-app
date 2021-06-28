@@ -6,12 +6,14 @@ import { SearchContext } from "contexts/SearchProvider";
 import { PageHeading } from "components/common/PageHeading";
 import { Button } from "components/common/Button";
 
-export const Question2: React.VFC = () => {
+const nextPath: string = "/q4";
+
+export const KeyQuestion1: React.VFC = () => {
   const { searchElement, setSearchElement } = useContext(SearchContext);
   return (
     <Container>
-      <PageHeading>質問２</PageHeading>
-      <Link to="/q3">
+      <PageHeading>気になるキーワードを選択してください</PageHeading>
+      <Link to={nextPath}>
         <StyledButton>
           <Button
             onClick={() =>
@@ -22,7 +24,7 @@ export const Question2: React.VFC = () => {
           </Button>
         </StyledButton>
       </Link>
-      <Link to="/q3">
+      <Link to={nextPath}>
         <StyledButton>
           <Button
             onClick={() => setSearchElement({ ...searchElement, key: "音楽" })}
@@ -31,7 +33,7 @@ export const Question2: React.VFC = () => {
           </Button>
         </StyledButton>
       </Link>
-      <Link to="/q3">
+      <Link to={nextPath}>
         <StyledButton>
           <Button
             onClick={() =>
@@ -42,7 +44,7 @@ export const Question2: React.VFC = () => {
           </Button>
         </StyledButton>
       </Link>
-      <Link to="/q3">
+      <Link to={nextPath}>
         <StyledButton>
           <Button
             onClick={() =>
@@ -53,7 +55,7 @@ export const Question2: React.VFC = () => {
           </Button>
         </StyledButton>
       </Link>
-      <Link to="/q3">
+      <Link to={nextPath}>
         <StyledButton>
           <Button
             onClick={() =>

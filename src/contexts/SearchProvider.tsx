@@ -4,6 +4,7 @@ import React, { createContext, useState } from "react";
 interface SearchElement {
   key: string;
   category: string;
+  order: string;
 }
 //useState用
 interface SearchContextProps {
@@ -21,6 +22,7 @@ export const SearchProvider: React.VFC<Props> = ({ children }) => {
   const [searchElement, setSearchElement] = useState<SearchElement>({
     key: "",
     category: "",
+    order: "",
   });
   return (
     <SearchContext.Provider value={{ searchElement, setSearchElement }}>
