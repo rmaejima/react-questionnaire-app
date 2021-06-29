@@ -7,27 +7,21 @@ import { PageHeading } from "components/common/PageHeading";
 import { Button } from "components/common/Button";
 import { getYoutubeChannels } from "api/channels";
 import { YoutubeChannel } from "types/youtube";
+import { ChList } from "components/channels";
 
 export const ChannelResult: React.VFC = () => {
-  // const { channelElement } = useContext(ChannelContext);
+  const { channelElement } = useContext(ChannelContext);
   const [channels, setChannels] = useState<YoutubeChannel[]>([]);
   useEffect(() => {
-    // (async () => {
-    //   setChannels(
-    //     await getYoutubeChannels(
-    //       // channelElement.category,
-    //       // channelElement.maxResults
-    //       "GCR2FtaW5n",
-    //       "10"
-    //     )
-    //   );
-    // })();
-    getYoutubeChannels("NBA バスケットボール");
+    (async () => {
+      setChannels(await getYoutubeChannels(channelElement.keyword));
+    })();
   }, []);
   return (
     <Container>
       <PageHeading>結果</PageHeading>
-      <Text>こんな動画はどうでしょうか？</Text>
+      <Text>こんなチャンネルはどうでしょうか？</Text>
+      <ChList channels={channels} />
       <Link to="/">
         <StyledButton>
           <Button>ホームに戻る</Button>

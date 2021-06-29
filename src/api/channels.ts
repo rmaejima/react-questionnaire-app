@@ -5,11 +5,11 @@ const YOUTUBE_SERACH_API_URI = "https://www.googleapis.com/youtube/v3/search?";
 const API_KEY = `${process.env.REACT_APP_YOUTUBE_API_KEY}`;
 
 export const getYoutubeChannels = async (
-  category: string
+  keyword: string
 ): Promise<YoutubeChannel[]> => {
   const params = {
     key: API_KEY,
-    q: `${category}`,
+    q: `${keyword}`,
     part: "snippet",
     type: "channel",
     order: "viewCount",

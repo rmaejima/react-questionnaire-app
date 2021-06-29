@@ -1,7 +1,7 @@
 import React, { createContext, useState } from "react";
 
 interface ChannelElement {
-  category: string;
+  keyword: string;
   maxResults: string;
 }
 
@@ -18,7 +18,7 @@ interface Props {
 
 export const ChannelProvider: React.VFC<Props> = ({ children }) => {
   const [channelElement, setChannelElement] = useState<ChannelElement>({
-    category: "",
+    keyword: "",
     maxResults: "",
   });
   return (
