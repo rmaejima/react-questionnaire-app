@@ -13,17 +13,15 @@ export const ChannelQuestion: React.VFC = () => {
   return (
     <Container>
       <PageHeading>気になるキーワードを選択してください</PageHeading>
-      <form onSubmit={            setChannelElement({
-                ...channelElement,
-                keyword: "黒子のバスケ",
-                maxResults: "5",
-              })}>
-                
-              </form>
       <Link to={nextPath}>
         <StyledButton>
           <Button
             onClick={() =>
+              setChannelElement({
+                ...channelElement,
+                keyword: "黒子のバスケ",
+                maxResults: "5",
+              })
             }
           >
             カテゴリー１の表示5
