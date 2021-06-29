@@ -10,7 +10,7 @@ export const ChListItem: React.VFC<Props> = ({ channel }) => {
     <Container>
       <Title>{channel.snippet.channelTitle}</Title>
       <Description>{channel.snippet.description}</Description>
-      <Img src={channel.snippet.thumbnails.high.url} />
+      <Img src={channel.snippet.thumbnails.default.url} />
     </Container>
   );
 };
@@ -29,8 +29,8 @@ const Description = styled.p`
 
 const Img = styled.img`
   display: block;
-  width: 800px;
-  height: 800px;
+  width: 200px;
+  height: 200px;
   margin: 0 auto;
   border-radius: 50%; ;
 `;
