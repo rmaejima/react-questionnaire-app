@@ -11,6 +11,7 @@ import { VideoList } from "components/videos";
 
 export const Result: React.VFC = () => {
   const { searchElement } = useContext(SearchContext);
+  console.log(searchElement);
   const [videos, setVideos] = useState<YoutubeVideo[]>([]);
   useEffect(() => {
     (async () => {
