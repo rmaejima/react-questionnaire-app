@@ -77,98 +77,10 @@ export const CategoryQuestion: React.VFC = () => {
         <StyledButton>
           <Button
             onClick={() =>
-              setSearchElement({ ...searchElement, category: "19" })
-            }
-          >
-            旅行とイベント
-          </Button>
-        </StyledButton>
-      </Link>
-      <Link to={nextPath}>
-        <StyledButton>
-          <Button
-            onClick={() =>
               setSearchElement({ ...searchElement, category: "20" })
             }
           >
             ゲーム
-          </Button>
-        </StyledButton>
-      </Link>
-      <Link to={nextPath}>
-        <StyledButton>
-          <Button
-            onClick={() =>
-              setSearchElement({ ...searchElement, category: "22" })
-            }
-          >
-            ブログ
-          </Button>
-        </StyledButton>
-      </Link>
-      <Link to={nextPath}>
-        <StyledButton>
-          <Button
-            onClick={() =>
-              setSearchElement({ ...searchElement, category: "23" })
-            }
-          >
-            コメディー
-          </Button>
-        </StyledButton>
-      </Link>
-      <Link to={nextPath}>
-        <StyledButton>
-          <Button
-            onClick={() =>
-              setSearchElement({ ...searchElement, category: "24" })
-            }
-          >
-            エンターテインメント
-          </Button>
-        </StyledButton>
-      </Link>
-      <Link to={nextPath}>
-        <StyledButton>
-          <Button
-            onClick={() =>
-              setSearchElement({ ...searchElement, category: "25" })
-            }
-          >
-            ニュースと政治
-          </Button>
-        </StyledButton>
-      </Link>
-      <Link to={nextPath}>
-        <StyledButton>
-          <Button
-            onClick={() =>
-              setSearchElement({ ...searchElement, category: "26" })
-            }
-          >
-            ハウツーとスタイル
-          </Button>
-        </StyledButton>
-      </Link>
-      <Link to={nextPath}>
-        <StyledButton>
-          <Button
-            onClick={() =>
-              setSearchElement({ ...searchElement, category: "27" })
-            }
-          >
-            教育
-          </Button>
-        </StyledButton>
-      </Link>
-      <Link to={nextPath}>
-        <StyledButton>
-          <Button
-            onClick={() =>
-              setSearchElement({ ...searchElement, category: "28" })
-            }
-          >
-            科学と技術
           </Button>
         </StyledButton>
       </Link>
