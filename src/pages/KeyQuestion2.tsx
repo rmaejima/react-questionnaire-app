@@ -1,13 +1,10 @@
 import React, { useState, useContext } from "react";
 import { useHistory } from "react-router-dom";
-import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 import { SearchContext } from "contexts/SearchProvider";
 import { PageHeading } from "components/common/PageHeading";
 import { Button } from "components/common/Button";
-
-const nextPath: string = "/result";
 
 export const KeyQuestion2: React.VFC = () => {
   const { searchElement, setSearchElement } = useContext(SearchContext);
