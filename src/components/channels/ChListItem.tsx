@@ -16,7 +16,11 @@ export const ChListItem: React.VFC<Props> = ({ channel }) => {
 };
 
 const Container = styled.div`
-  padding-top: 2rem;
+  max-width: 600px;
+  margin: 5rem auto 0;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 2rem;
 `;
 
 const Title = styled.h1`

@@ -4,7 +4,9 @@ import styled from "styled-components";
 
 import { SearchContext } from "contexts/SearchProvider";
 import { PageHeading } from "components/common/PageHeading";
-import { Button } from "components/common/Button";
+import { Inputs } from "components/common/Inputs";
+import { Form } from "components/common/Form";
+import { FormButton } from "components/common/Button";
 
 export const KeyQuestion2: React.VFC = () => {
   const { searchElement, setSearchElement } = useContext(SearchContext);
@@ -26,17 +28,19 @@ export const KeyQuestion2: React.VFC = () => {
   return (
     <Container>
       <PageHeading>気になるキーワードを入力してください</PageHeading>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          name="KEYWORD"
-          placeholder="キーワード"
-          onChange={handleChange}
-        />
-        <StyledButton>
-          <Button type="submit">押してください</Button>
-        </StyledButton>
-      </form>
+      <StyledForm>
+        <Form onSubmit={handleSubmit}>
+          <Inputs
+            type="text"
+            name="KEYWORD"
+            placeholder="キーワード"
+            onChange={handleChange}
+          />
+          <StyledButton>
+            <FormButton type="submit">検索</FormButton>
+          </StyledButton>
+        </Form>
+      </StyledForm>
     </Container>
   );
 };
@@ -48,7 +52,8 @@ const Container = styled.div`
   background-color: ${(p) => p.theme.colors.base[500]};
 `;
 
-const StyledButton = styled.div`
-  max-width: 1200px;
-  margin: 2rem auto 0;
+const StyledForm = styled.div`
+  padding-top: 2rem;
 `;
+
+const StyledButton = styled.div``;

@@ -36,3 +36,30 @@ const StyledButton = styled.button`
     opacity: 0.8;
   }
 `;
+
+export const FormButton: React.VFC<Props> = ({
+  type,
+  onClick,
+  className,
+  children,
+}) => {
+  return (
+    <StyledFormButton className={className} type={type} onClick={onClick}>
+      {children}
+    </StyledFormButton>
+  );
+};
+
+const StyledFormButton = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 100%;
+  background: ${(p) => p.theme.colors.primary[500]};
+  font-size: 1rem;
+  transition: 0.3s;
+  :hover {
+    opacity: 0.8;
+  }
+`;
