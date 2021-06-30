@@ -1,4 +1,5 @@
 import React, { useState, useContext } from "react";
+import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
@@ -11,6 +12,7 @@ const nextPath: string = "/result";
 export const KeyQuestion2: React.VFC = () => {
   const { searchElement, setSearchElement } = useContext(SearchContext);
   const [keyword, setkeyword] = useState<string>("");
+  const history = useHistory();
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -18,6 +20,7 @@ export const KeyQuestion2: React.VFC = () => {
       ...searchElement,
       key: searchElement.key + keyword,
     });
+    history.push("/result");
   };
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -33,17 +36,10 @@ export const KeyQuestion2: React.VFC = () => {
           placeholder="キーワード"
           onChange={handleChange}
         />
-        {/* <Link to={nextPath}> */}
         <StyledButton>
           <Button type="submit">押してください</Button>
         </StyledButton>
-        {/* </Link> */}
       </form>
-      <Link to={nextPath}>
-        <StyledButton>
-          <Button>押してください</Button>
-        </StyledButton>
-      </Link>
     </Container>
   );
 };
