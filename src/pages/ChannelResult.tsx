@@ -14,12 +14,7 @@ export const ChannelResult: React.VFC = () => {
   const [channels, setChannels] = useState<YoutubeChannel[]>([]);
   useEffect(() => {
     (async () => {
-      setChannels(
-        await getYoutubeChannels(
-          channelElement.keyword,
-          channelElement.maxResults
-        )
-      );
+      setChannels(await getYoutubeChannels(channelElement.keyword));
     })();
   }, []);
   return (
