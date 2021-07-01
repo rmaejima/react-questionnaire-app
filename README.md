@@ -8,7 +8,7 @@
 - TypeScript
 - styled-components( + ThemeProvider )
 
-# 実行手順
+## 実行手順
 1. GCPアカウントでプロジェクトを作成
 2. YouTube Data API v3を有効にし、APIキーを生成
 3. このリポジトリをクローン
