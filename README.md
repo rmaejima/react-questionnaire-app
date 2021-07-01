@@ -18,3 +18,10 @@ REACT_APP_YOUTUBE_API_KEY=YOUR_TOKEN
 ```
 5. `yarn` でパッケージをインストール
 6. ```yarn start```で実行
+
+## デモ
+### 動画検索のデモ
+![React-App-Google-Chrome-2021-07-01-10-01-18](https://user-images.githubusercontent.com/82492270/124049479-85fca580-da53-11eb-9e5f-aefd2b76e2b0.gif)
+
+### チャンネル検索のデモ
+![React-App-Google-Chrome-2021-07-01-10-04-20](https://user-images.githubusercontent.com/82492270/124049657-f4d9fe80-da53-11eb-8695-6a8f94dd89c2.gif)
